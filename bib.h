@@ -1,5 +1,11 @@
-#include <string>
+#ifndef BIB
+#define BIB
+
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
-int * frequencia(string nome);
+int * frequencia(ifstream & arq);
+
+#endif

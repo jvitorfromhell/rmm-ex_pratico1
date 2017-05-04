@@ -1,7 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-
 #include "bib.h"
 
 using namespace std;
@@ -9,13 +5,17 @@ using namespace std;
 int main () {
 	int * vet;
 
-	vet = frequencia("teste.txt");
+	ifstream arq("teste.txt");
 
-	for(int i = 0; i <= 26; i++) {
-		cout << vet[i] << " ";
+	if(arq.is_open()) {
+		vet = frequencia(arq);
+
+		for(int i = 0; i <= 26; i++) {
+			cout << vet[i] << " ";
+		}
+
+		cout << endl;
 	}
-
-	cout << endl;
 
 	return 0;
 }

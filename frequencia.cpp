@@ -1,22 +1,19 @@
-#include <iostream>
-#include <stdlib.h>
-#include <fstream>
-#include <string>
-
 #include "bib.h"
 
 using namespace std;
 
-int * frequencia(string nome) {
-	int * vet = (int *) malloc(27 * sizeof(int));
-
+// Retorna o numero de ocorrencias de cada simbolo no arquivo
+int * frequencia(ifstream & arq) {
+	// Variaveis locais
 	char atual;
+	int * vet = new int[27];
 
-	ifstream arq(nome);
-
+	// Leitura do arquivo
 	while(!arq.eof()) {
+		// Le caractere atual
 		arq >> noskipws >> atual;
 
+		// Incrementa indice relativo
 		if (atual == 32) {
 			vet[26]++;
 		}
