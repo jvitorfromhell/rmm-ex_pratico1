@@ -8,13 +8,11 @@ int main () {
 	ifstream arq("teste.txt");
 
 	if(arq.is_open()) {
-		vet = frequencia(arq);
+		string * codigos = gerarCodigo(gerarArvore(frequencia(arq)));
+		
+		for (int i = 0; i < 27; i++)
+			cout << codigos[i] << endl;
 
-		for(int i = 0; i <= 26; i++) {
-			cout << vet[i] << " ";
-		}
-
-		cout << endl;
 	}
 
 	return 0;
