@@ -4,6 +4,7 @@
 #include <iostream>
 #include <queue>
 #include <fstream>
+#include <bitset>
 
 using namespace std;
 
@@ -27,7 +28,7 @@ Nodo * gerarArvore(int * frequencias);
 string * gerarCodigo(Nodo * raiz);
 void codigoRecursivo(Nodo * nodo, string * codigos);
 void salvarCodigo(string arq, string * codigos);
-bool comprimir(string arqFonte, string arqCodigo, string arqComp);
-bool descomprimir(string arqFonte, string arqCodigo, string arqDesc);
+bool comprimir(string arqFonte, string arqFreq, string arqComp);
+bool descomprimir(string arqFonte, string arqFreq, string arqDesc);
 
 #endif
